@@ -4,8 +4,7 @@ import {
     ValueProperty,
     ReferenceProperty,
     PrimaryKeyProperty,
-    DataContext,
-    TempDataStore } from "entityjs";
+    IDataContext } from "entityjs";
 
 /*
  * This sample provides a simple demonstration of using the StorageEntities in entityjs.

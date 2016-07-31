@@ -1,10 +1,10 @@
 import * as express from "express";
 import * as Express from "express-serve-static-core";
 import * as http_status_codes from "http-status-codes";
-import { DataContext } from "entityjs";
+import { IDataContext } from "entityjs";
 import { EmployeeRouter } from "./employeeRouter"
 
-export function ApiRouter(context: DataContext) {
+export function ApiRouter(context: IDataContext) {
 
   var apiRouter: Express.Router = express.Router();
 

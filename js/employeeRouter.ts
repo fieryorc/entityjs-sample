@@ -1,10 +1,10 @@
 import * as express from "express";
 import * as ExpressCore from "express-serve-static-core";
 import * as http_status_codes from "http-status-codes";
-import { DataContext, EntityHelpers } from "entityjs";
+import { IDataContext, EntityHelpers } from "entityjs";
 import { EmployeeEntity } from "./entities";
 
-export function EmployeeRouter(context: DataContext): ExpressCore.Router {
+export function EmployeeRouter(context: IDataContext): ExpressCore.Router {
 
   var employeeRouter: ExpressCore.Router = express.Router();
 

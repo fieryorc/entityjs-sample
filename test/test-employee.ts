@@ -4,12 +4,12 @@ import chaiHttp = require("chai-http");
 import { AppServer } from "../server";
 import * as http_status_codes from "http-status-codes";
 
-import { DataContext, TempDataStore, CloudDataStore } from "entityjs";
+import { IDataContext, InMemoryDataStore, createDataContext } from "entityjs";
 
 var should = chai.should();
 var expect = chai.expect;
 chai.use(chaiHttp);
-var context = new DataContext(new TempDataStore());
+var context = createDataContext(new InMemoryDataStore());
 var appServer = new AppServer(context);
 var server = appServer.start();
 

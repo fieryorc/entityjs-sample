@@ -1,7 +1,7 @@
 import * as express from "express";
 import * as ExpressCore from "express-serve-static-core";
 import * as body_parser from "body-parser";
-import { DataContext, CloudDataStore, EntityHelpers } from "entityjs";
+import { IDataContext, CloudDataStore, EntityHelpers } from "entityjs";
 
 import { ApiRouter } from "./js/api";
 
@@ -10,9 +10,9 @@ import { ApiRouter } from "./js/api";
  */
 export class AppServer {
   private app: ExpressCore.Express;
-  private context: DataContext;
+  private context: IDataContext;
 
-  public constructor(context: DataContext) {
+  public constructor(context: IDataContext) {
     this.context = context;
   }
 
