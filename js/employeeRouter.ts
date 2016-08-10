@@ -38,7 +38,7 @@ export function EmployeeRouter(context: IDataContext): ExpressCore.Router {
       .then((v) => {
         if (v) {
           res.status(http_status_codes.OK)
-            .send(EntityHelpers.getObject(employee, false, true, ["kind"]));
+            .json(EntityHelpers.getObject(employee, false, true, ["kind"]));
         } else {
           res.sendStatus(http_status_codes.NOT_FOUND);
         }
@@ -56,7 +56,7 @@ export function EmployeeRouter(context: IDataContext): ExpressCore.Router {
     employee.id = employeeId;
     employee.delete()
       .then(() => {
-          res.sendStatus(http_status_codes.OK);
+        res.status(http_status_codes.OK).send();
       })
       .catch(err => {
         res.sendStatus(http_status_codes.INTERNAL_SERVER_ERROR);
